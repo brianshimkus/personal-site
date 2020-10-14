@@ -4,4 +4,18 @@ body {
   background-color: $blue;
   color: $white;
   font-family: "Raleway";
+  letter-spacing: 3px;
+}
+
+h1 {
+  color: $red;
+  font-size: 60px;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+h2 {
+  font-size: 30px;
 }
