@@ -84,7 +84,11 @@ export default function Home({ data }) {
                 </ul>
               </div>
               <div className="contact">
-                <a href="../src/assets/BrianShimkus-Resume.pdf" target="_blank">
+                <a
+                  href="https://drive.google.com/file/d/1GvkcStF_UoTrFL5A2Z-AHIqXnFQG_D1P/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <button
                     class="button btn-primary"
                     alt="External link to my resume"
@@ -120,6 +124,9 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
+    }
+    resumeGatsbyImage: file(relativePath: { eq: "BrianShimkus-Resume.jpg" }) {
+      relativePath
     }
   }
 `
