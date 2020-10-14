@@ -26,7 +26,7 @@ export default function Home({ data }) {
                 <div className="column is-3">
                   <Img
                     fluid={data.logoGatsbyImage.childImageSharp.fluid}
-                    alt="A self portrait of Brian Shimkus"
+                    alt="Logo"
                   />
                 </div>
                 <div className="column is-9">
@@ -114,7 +114,7 @@ export const query = graphql`
         }
       }
     }
-    logoGatsbyImage: file(relativePath: { eq: "logo.png" }) {
+    logoGatsbyImage: file(relativePath: { eq: "Logo.png" }) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid
