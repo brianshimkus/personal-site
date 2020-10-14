@@ -22,16 +22,29 @@ export default function Home({ data }) {
               />
             </div>
             <div class="column">
-              <h1>
-                <span>Brian</span> Shimkus
-              </h1>
-              <h2>Front-End Developer</h2>
+              <div className="columns is-mobile">
+                <div className="column is-3">
+                  <Img
+                    fluid={data.logoGatsbyImage.childImageSharp.fluid}
+                    alt="A self portrait of Brian Shimkus"
+                  />
+                </div>
+                <div className="column is-9">
+                  <h1>
+                    <span>Brian</span> Shimkus
+                  </h1>
+                  <h2>Front-End Developer</h2>
+                </div>
+              </div>
+              <hr />
               <div className="social-icons">
                 <ul>
                   <li>
                     <a
                       href="https://github.com/brianshimkus"
                       target="_blank"
+                      alt="External link to GitHub"
+                      title="GitHub"
                       rel="noreferrer"
                     >
                       <FaGithub />
@@ -41,6 +54,8 @@ export default function Home({ data }) {
                     <a
                       href="https://www.linkedin.com/in/brianshimkus1/"
                       target="_blank"
+                      alt="External link to LinkedIn"
+                      title="LinkedIn"
                       rel="noreferrer"
                     >
                       <FaLinkedin />
@@ -50,13 +65,19 @@ export default function Home({ data }) {
                     <a
                       href="https://www.instagram.com/brianshimkus.me/"
                       target="_blank"
+                      alt="External link to Instagram"
+                      title="Instagram"
                       rel="noreferrer"
                     >
                       <FaInstagram />
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:Brian@BrianShimkus.com">
+                    <a
+                      href="mailto:Brian@BrianShimkus.com"
+                      alt="Click to email me"
+                      title="Email"
+                    >
                       <FaEnvelope />
                     </a>
                   </li>
@@ -64,7 +85,11 @@ export default function Home({ data }) {
               </div>
               <div className="contact">
                 <a href="../src/assets/BrianShimkus-Resume.pdf" target="_blank">
-                  <button class="button btn-primary">
+                  <button
+                    class="button btn-primary"
+                    alt="External link to my resume"
+                    title="Resume"
+                  >
                     <span>Resume</span>
                     <span class="icon">
                       <FaListAlt />
@@ -83,6 +108,13 @@ export default function Home({ data }) {
 export const query = graphql`
   query {
     heroImageGatsbyImage: file(relativePath: { eq: "Me-BW.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    logoGatsbyImage: file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid

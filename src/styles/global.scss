@@ -1,14 +1,18 @@
 @import "variables.scss";
 
+html {
+  font-size: 100%;
+}
+
 body {
   background-color: $blue;
-  color: $white;
+  color: $gray;
   font-family: "Raleway";
   letter-spacing: 3px;
 }
 
 a {
-  color: $red;
+  color: $gray;
 
   &:hover {
     color: $green;
@@ -23,9 +27,20 @@ button {
   transition: all 0.2s ease-in;
 }
 
+button {
+  outline: none;
+}
+
+hr {
+  background-color: $gray;
+}
+
 h1 {
-  color: $red;
-  font-size: 60px;
+  font-size: 3vw;
+
+  @include mobile {
+    font-size: 6vw;
+  }
 
   span {
     font-weight: 800;
@@ -33,5 +48,13 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 2vw;
+
+  @include mobile {
+    font-size: 5vw;
+  }
+}
+
+img {
+  width: 100%;
 }
