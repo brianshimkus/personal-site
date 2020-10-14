@@ -4,6 +4,11 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+// Gatsby settings for the environment variables
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Brian Shimkus | Front-End Developer",
@@ -27,6 +32,12 @@ module.exports = {
           `source sans pro\:100,200,300,400,500,600,700,800`, // you can also specify font weights and styles
         ],
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GA_TRACKING_ID,
       },
     },
   ],
