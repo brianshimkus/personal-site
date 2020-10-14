@@ -11,12 +11,14 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "Brian Shimkus | Front-End Developer",
+    title: `Brian Shimkus | Front-End Developer`,
+    description: `Brian Shimkus' Front-End Development Portfolio`,
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
