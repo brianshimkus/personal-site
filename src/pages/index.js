@@ -25,6 +25,7 @@ export default function Home({ data }) {
               <div className="columns is-mobile">
                 <div className="column is-3">
                   <Img
+                    critical
                     fluid={data.logoGatsbyImage.childImageSharp.fluid}
                     alt="Logo"
                   />
@@ -118,10 +119,10 @@ export const query = graphql`
         }
       }
     }
-    logoGatsbyImage: file(relativePath: { eq: "Logo.png" }) {
+    logoGatsbyImage: file(relativePath: { eq: "Logo-Light.png" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1000, maxHeight: 1000) {
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
