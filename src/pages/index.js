@@ -34,7 +34,7 @@ export default function Home({ data }) {
                   <h1>
                     <span>Brian</span> Shimkus
                   </h1>
-                  <h2>Front-End Developer</h2>
+                  <h2>Front-End Engineer</h2>
                 </div>
               </div>
               <hr />
